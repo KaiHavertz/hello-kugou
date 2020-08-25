@@ -3,7 +3,7 @@
     <main>
       <img alt="logo"
            src="@/assets/img/logo.png" />
-      <div class="home__title">Hello 124鱼猴家族!</div>
+      <div class="home__title">Hello pc端!</div>
       <router-link to="/home">
         <el-button type="primary"
                    icon="el-icon-user">豪爽</el-button>

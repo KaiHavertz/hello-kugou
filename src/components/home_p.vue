@@ -1,7 +1,6 @@
 <template>
   <div>
-    <span v-if="this.$pc">111</span>
-    <span v-if="$pc">222</span>
+    <span>电脑端</span>
     <el-form :model="ruleForm"
              :rules="rules"
              ref="ruleForm"

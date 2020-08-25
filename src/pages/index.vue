@@ -8,17 +8,20 @@
 export default {
   name: 'index',
   watch: {
-    $route: function (to, from) {
+
+  },
+  created () {
+ $route: function (to, from) {
       console.log(to.name);
       if (to.name.indexOf('_p') > 0 && !this.$pc) {
         this.$router.replace(to.name.split('_p')[0])
-        console.log('手机端')
+        console.log('手机端111')
       } else if (to.name.indexOf('_p') < 0 && this.$pc) {
         this.$router.replace(to.name + '_p')
-        console.log('电脑端')
+        console.log('电脑端222')
       }
-    }
   }
+}
 }
 </script>
 <style lang="scss">

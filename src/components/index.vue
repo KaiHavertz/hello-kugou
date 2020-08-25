@@ -1,28 +1,20 @@
 <template>
-  <div>
-    手机端
-    {{this.$pc}}
-  </div>
-
+  <section class="home">
+    <main>
+      <img alt="logo"
+           src="@/assets/img/logo.png" />
+      <div class="home__title">Hello 手机端!</div>
+      <router-link to="/home">
+        <el-button type="primary"
+                   icon="el-icon-user">豪爽</el-button>
+      </router-link>
+    </main>
+  </section>
 </template>
 
 <script>
-
 export default {
-
-  name: 'index',
-  watch: {
-    $route: function (to, from) {
-      if (to.name.indexOf('_p') > 0 && !this.$pc) {
-        this.$router.replace(to.name.split('_p')[0])
-      } else if (to.name.indexOf('_p') < 0 && this.$pc) {
-        this.$router.replace(to.name + '_p')
-      }
-    }
-
-  }, mounted () {
-    console.log('手机端');
-  }
+  name: 'index'
 }
 </script>
 
