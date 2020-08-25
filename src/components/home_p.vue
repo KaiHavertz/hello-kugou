@@ -1,5 +1,6 @@
 <template>
-  <div> <span v-if="this.$pc">111</span>
+  <div>
+    <span v-if="this.$pc">111</span>
     <span v-if="$pc">222</span>
     <el-form :model="ruleForm"
              :rules="rules"
@@ -89,7 +90,16 @@ export default {
       }
     }
 
-  }, data () {
+  }, watch: {
+    $route: function (to, from) {
+      if (to.name.indexOf('_p') > 0 && !this.$pc) {
+        this.$router.replace(to.name.split('_p')[0])
+      } else if (to.name.indexOf('_p') < 0 && this.$pc) {
+        this.$router.replace(to.name + '_p')
+      }
+    }
+  },
+  data () {
     return {
       ruleForm: {
         name: '',
